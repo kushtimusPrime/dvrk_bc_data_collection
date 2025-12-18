@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=80.9", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dvrk-bc-data-collection"
+version = "0.1.0"
+description = "Data Collection for the Open H Embodiment Project"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Kush Hari", email = "kush_hari@berkeley.edu"}
+]
+
+dependencies = [
+    "lerobot==0.3.3",
+    "cmake==3.29.0.1",
+    "viser==1.0.16",
+    "tyro==1.0.2"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dvrk_bc_data_collection*"]
+
+[tool.setuptools.package-data]
+dvrk_bc_data_collection = ["py.typed"]
