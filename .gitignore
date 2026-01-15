@@ -3,3 +3,4 @@ dvrk_bc_data_collection_ws/build
 dvrk_bc_data_collection_ws/data
 dvrk_bc_data_collection_ws/devel
 dvrk_bc_data_collection_ws/.catkin_workspace
+dvrk_bc_data_collection_ws/src/data_collection/scripts/__pycache__/

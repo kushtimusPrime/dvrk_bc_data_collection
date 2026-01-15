@@ -21,7 +21,7 @@ class RosbagCollectionNode:
         self.state = "IDLE"  # IDLE | RECORDING
         self.episode_count = 0
         self.rosbag_process = None
-        self.data_dir = f"data/raw_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        self.data_dir = f"/media/davinci/6a337c57-3559-480b-b8ed-1028f26f1ebf/home/davinci2/debridement_data/raw_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
         # Create data directory
         os.makedirs(self.data_dir, exist_ok=True)
@@ -29,8 +29,8 @@ class RosbagCollectionNode:
 
         # Topics to record
         self.topics = [
-            "/av/img_left_rect",
-            "/av/img_right_rect",
+            "/av/img_left",
+            "/av/img_right",
             "/dvrk/PSM1/state_joint_current",
             "/dvrk/PSM1/state_jaw_current",
             "/dvrk/PSM2/state_joint_current",
@@ -59,7 +59,7 @@ class RosbagCollectionNode:
         bag_path = f"{self.data_dir}/episode_{self.episode_count:04d}.bag"
 
         # Build rosbag record command with BZ2 compression
-        cmd = ["rosbag", "record"] + self.topics + ["-O", bag_path, "-j"]
+        cmd = ["rosbag", "record"] + self.topics + ["-O", bag_path]#, "-j"]
 
         # Launch rosbag as subprocess
         self.rosbag_process = subprocess.Popen(

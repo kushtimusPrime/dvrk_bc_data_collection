@@ -27,9 +27,8 @@ rosrun data_collection rosbag_collection_node.py
 ```
 
 **Keyboard Controls:**
-- `Space` - Start recording an episode
-- `Space` (again) - Stop recording the current episode
-- `q` - Quit the data collection node
+- `b` - Start recording an episode
+- `b` (again) - Stop recording the current episode
 
 Rosbag files will be saved to `data/` directory with automatic episode numbering (e.g., `episode_0001.bag`, `episode_0002.bag`, etc.).
 
@@ -52,8 +51,7 @@ Convert a folder of rosbag files to LeRobot v2.1 format:
 ```bash
 python src/data_collection/scripts/convert_rosbag_to_lerobot.py \
     --input-dir data/raw_rosbags \
-    --output data/raw_rosbags_lerobot \
-    --fps 30
+    --output data/raw_rosbags_lerobot
 ```
 
 **Arguments:**
@@ -101,7 +99,7 @@ data/lerobot_dataset/
 Visualize the collected dataset with 3D robot visualization and camera views:
 
 ```bash
-python src/data_collection/scripts/visualize_lerobot_data.py data/lerobot_dataset
+python src/data_collection/scripts/visualize_lerobot_data.py --dataset-dir data/lerobot_dataset
 ```
 
 **Features:**

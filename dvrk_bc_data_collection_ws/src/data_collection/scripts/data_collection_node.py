@@ -55,8 +55,8 @@ class VideoWriter:
 class DataCollectionNode:
     def __init__(self):
         # Subscribe to all data streams
-        self.img_left_sub = message_filters.Subscriber("/av/img_left_rect", Image)
-        self.img_right_sub = message_filters.Subscriber("/av/img_right_rect", Image)
+        self.img_left_sub = message_filters.Subscriber("/av/img_left", Image)
+        self.img_right_sub = message_filters.Subscriber("/av/img_right", Image)
         self.psm1_joint_sub = message_filters.Subscriber("/dvrk/PSM1/state_joint_current", JointState)
         self.psm1_jaw_sub = message_filters.Subscriber("/dvrk/PSM1/state_jaw_current", JointState)
         self.psm2_joint_sub = message_filters.Subscriber("/dvrk/PSM2/state_joint_current", JointState)

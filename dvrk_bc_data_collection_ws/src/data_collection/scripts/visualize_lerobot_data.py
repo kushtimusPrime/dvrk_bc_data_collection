@@ -208,7 +208,6 @@ def main(dataset_dir: str):
         # Update action robot (next state)
         action_joints = joints_data['action'][index]  # Shape: (14,)
         # TODO: Mess around with jaws for visualization
-        breakpoint()
         action_urdf.update_cfg(action_joints)
 
     # Load the first episode on startup
